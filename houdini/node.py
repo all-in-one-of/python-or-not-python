@@ -1,3 +1,24 @@
+"""
+This script is an example of a basic Houdini node class.
+
+It allows to have access to all hou.Node attributes thanks to
+the __getattr__ function. As you may have noticed, it is not
+possible to create an instance of hou.Node, so if you want to
+create a custom class, you have to found a way to get all of
+its attributes. So, that's why this class exists. And I found
+this idea from from Ryan Bland, which is available freely on
+his website.
+
+This is the link : http://www.ryan-bland.com/CodeSamples/
+You can found his HouNode and HouParm classes (and many other
+scripts).
+
+I just wanted to share with you a simple one. So don't hesitate
+to use it too. You can do the same logic with the hou.Parm class
+for example.
+"""
+
+
 import hou
 
 
@@ -6,7 +27,7 @@ class _HouNodeMetaclass(type):
     """
 
     def __call__( cls, nodeObj ):
-        """Function called when the principal is instantiate.
+        """Function called when the principal class is instantiate.
 
         @param (str) nodeObj:
         Path of the node to instantiate.
